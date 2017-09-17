@@ -6,7 +6,7 @@ var express = require('express'),
 	//upload = require('./routes/upload.js'),
 	create = require('./routes/create.js'),
 	study = require('./routes/study.js'),
-	admin = require('./routes/admin.js');
+	admin = require('./routes/admin.js')
 
 var app = express();
 
