@@ -1,6 +1,6 @@
 server {
   listen 80;
-  root /home/vagrant/checkbox/public_html/;
+  root /root/checkbox/public_html/;
   index index.html index.htm;
 
   location / {
