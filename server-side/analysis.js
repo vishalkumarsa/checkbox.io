@@ -16,8 +16,9 @@ function main()
 	var args = process.argv.slice(2);
 
 	recursive(".", ["*.json", "*.jade", "*.html"], function (err, files) {
+		console.log(files)
 
-		for (var file of files)
+		for (file of files)
 		{
 			builders = {};
 			complexity(file);
