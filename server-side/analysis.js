@@ -17,7 +17,7 @@ function main()
 
 	recursive(".", ["*.json", "*.jade", "*.html"], function (err, files) {
 
-		for (file of files)
+		for (var file of files)
 		{
 			builders = {};
 			complexity(file);
