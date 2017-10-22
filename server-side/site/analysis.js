@@ -15,7 +15,7 @@ function main()
 {
 	var args = process.argv.slice(2);
 
-	recursive("./test", ["*.json", "*.jade", "*.html"], function (err, files) {
+	recursive("./", ["*.json", "*.jade", "*.html"], function (err, files) {
 
 		for (file of files)
 		{
