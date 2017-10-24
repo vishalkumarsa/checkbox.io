@@ -165,42 +165,7 @@ function complexity(filePath)
 	// Tranverse program with a function visitor.
 	traverseWithParents(ast, function (node) 
 	{
-		// if(node.type === 'ExpressionStatement'){
-		// 	 	var stack = ['$'];
-		// 		var empty = true;
-		// 		console.log(node);
-		// 		var builder = new FunctionBuilder();
-		// 		builder.FunctionName = functionName(node);
-		// 		builder.StartLine    = node.loc.start.line;
-		// 		traverseWithParents(node, function(child){
-		// 		if(child.type === 'MemberExpression' && empty)
-		// 		{
-		// 			builder.messageChains += 1;
-		// 			//console.log(builder.messageChains)
-		// 			stack.push(child);
-		// 			//console.log(child);
-		// 			//console.log("first");
-		// 			empty = false;
-		// 		}
-		// 		if( (child.type === 'MemberExpression' || 
-		// 			child.type === 'CallExpression' ) &&
-		// 			 _.isEqual(stack[stack.length-1],child.parent) && !empty)
-		// 		{	
-		// 			if(child.type === 'MemberExpression'){
-		// 				builder.messageChains += 1;
-		// 				//console.log(builder.messageChains)
-		// 				//console.log(child.id)
-		// 			}
-		// 			stack.push(child);
-		// 			//console.log(child);
 
-		// 			//console.log("second");
-		// 		}
-					
-		// 	}, 1);
-		// 		console.log(builder.messageChains+"$$$$$$$$");
-		// 		builders[builder.FunctionName] = builder;
-		// }
 
 
 		if (node.type === 'FunctionDeclaration') 
@@ -225,12 +190,12 @@ function complexity(filePath)
 			// Message Chains
 				
 			//var msc = [];
-			var max = 0;
+			var max = 1;
 				traverseWithParents(node, function(bchild){
 					//console.log(child);
 					
 					
-				if(bchild.type === 'ExpressionStatement'){
+				if(bchild.type === 'ExpressionStatement' || bchild.type === 'VariableDeclaration'){
 			 	var stack = ['$'];
 				var empty = true;
 				// console.log(bchild);
