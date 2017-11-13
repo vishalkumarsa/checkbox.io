@@ -54,7 +54,7 @@
   with_items: "{{ do_droplet_new.results }}"
   
 - name: set env variable
-  shell: export "{{ item.droplet.name}}"="{{ item.droplet.ip_address }}"
+  shell: "export {{ item.droplet.name }}={{ item.droplet.ip_address }}"
   with_items: "{{ do_droplet_new.results }}"
 
 - name: Wait for VM to come up
