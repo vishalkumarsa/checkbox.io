@@ -1,5 +1,5 @@
 #!/bin/sh
 GIT_WORK_TREE=/var/lib/jenkins/workspace/checkbox.io/production-www/ git checkout -f
 cd /var/lib/jenkins/workspace/checkbox.io/deploy_checkbox && sudo ansible-playbook -i localhost newdroplet.yml
-npm install
+
 
