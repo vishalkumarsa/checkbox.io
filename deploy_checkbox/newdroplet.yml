@@ -1,5 +1,9 @@
 ---
 - hosts: localhost
+  vars: 
+    droplets: 
+    - checkbox-one 
+    - checkbox-two     
   connection: local
   serial: 1
   gather_facts: no
