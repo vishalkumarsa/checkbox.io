@@ -1,0 +1,25 @@
+{
+  "name": "proxy",
+  "version": "0.0.0",
+  "description": "proxy script",
+  "main": "proxy.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.12.3",
+    "multer": "^0.1.8",
+    "redis": "^0.12.1",
+    "http-proxy": "^1.16.2",
+    "chai": "^4.1.2",
+    "chai-http": "^2.0.1",
+    "mocha": "^3.5.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "is-reachable": "^2.3.3",
+    "socket.io-client": "^2.0.4"
+  }
+}
