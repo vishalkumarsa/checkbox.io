@@ -49,7 +49,10 @@
     ansible_ssh_user=root
     ansible_ssh_private_key_file=~/.ssh/id_rsa
   with_items: "{{ do_droplet_new.results }}"
-
+  
+- name: set env variable
+  shell: export prod="{{ item.droplet.ip_address }}"
+  with_items: {{ do_droplet_new.results }}"
 
 - name: Wait for VM to come up
   local_action: shell ansible -u root -m ping {{ item.droplet.ip_address }}
