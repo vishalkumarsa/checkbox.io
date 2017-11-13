@@ -52,7 +52,7 @@
   
 - name: set env variable
   shell: export prod="{{ item.droplet.ip_address }}"
-  with_items: {{ do_droplet_new.results }}"
+  with_items: "{{ do_droplet_new.results }}"
 
 - name: Wait for VM to come up
   local_action: shell ansible -u root -m ping {{ item.droplet.ip_address }}
