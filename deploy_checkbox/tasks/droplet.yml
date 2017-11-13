@@ -39,6 +39,8 @@
   with_items: "{{ do_droplet_new.results }}"
 - debug: msg="IP is {{ item.droplet.ip_address}}"
   with_items: "{{ do_droplet_new.results }}"
+- debug: msg = "Name is {{item.droplet.name}}"
+  with_items: "{{ do_droplet_new.results }}"
 
 
 - name: Add new droplet to inventory
