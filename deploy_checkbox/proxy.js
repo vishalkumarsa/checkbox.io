@@ -24,7 +24,7 @@ var socket = sioc('http://' + canaryServer);
 
 var Dict = {};
 
-var lines = require('fs').readFileSync('./input', 'utf-8')
+var lines = require('fs').readFileSync('./var/lib/jenkins/IP', 'utf-8')
     .split('\n')
     .filter(Boolean);
 
