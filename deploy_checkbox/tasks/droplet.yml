@@ -57,6 +57,11 @@
   shell: "export {{ item.droplet.name }}={{ item.droplet.ip_address }}"
   with_items: "{{ do_droplet_new.results }}"
   
+- name: Create file
+  file:
+    path: /var/lib/jenkins/IP
+    state: touch
+    
 - name: Write to a file
   lineinfile:
     line: "{{ item.droplet.name }}={{ item.droplet.ip_address }}"
