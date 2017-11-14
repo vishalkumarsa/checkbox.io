@@ -56,6 +56,12 @@
 - name: set env variable
   shell: "export {{ item.droplet.name }}={{ item.droplet.ip_address }}"
   with_items: "{{ do_droplet_new.results }}"
+  
+- name: Write to a file
+  copy:
+    content: "{{ item.droplet.name }}={{ item.droplet.ip_address }}"
+    dest: /var/lib/jenkins/IP
+  with_items: "{{ do_droplet_new.results }}"
 
 - name: Wait for VM to come up
   local_action: shell ansible -u root -m ping {{ item.droplet.ip_address }}
