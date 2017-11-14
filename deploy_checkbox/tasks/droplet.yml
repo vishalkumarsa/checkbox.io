@@ -59,7 +59,7 @@
   
 - name: Write to a file
   copy:
-    content: "{{ item.droplet.name }}={{ item.droplet.ip_address }}"
+    content: "{{ item.droplet.name }}={{ item.droplet.ip_address }}\n"
     dest: /var/lib/jenkins/IP
   with_items: "{{ do_droplet_new.results }}"
 
