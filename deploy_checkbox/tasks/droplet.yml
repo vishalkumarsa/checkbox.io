@@ -58,9 +58,10 @@
   with_items: "{{ do_droplet_new.results }}"
   
 - name: Write to a file
-  copy:
-    content: "{{ item.droplet.name }}={{ item.droplet.ip_address }}\n"
-    dest: /var/lib/jenkins/IP
+  lineinfile:
+    line: "{{ item.droplet.name }}={{ item.droplet.ip_address }}"
+    path: /var/lib/jenkins/IP
+    insertafter: EOF
   with_items: "{{ do_droplet_new.results }}"
 
 - name: Wait for VM to come up
